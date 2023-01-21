@@ -1,3 +1,8 @@
+:root{
+  --yellow-color: #F4CE14;
+  --main-padding: 16.6%;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -14,10 +19,42 @@ code {
     monospace;
 }
 
+#root {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100px minmax(350px, auto) minmax(300px, auto);
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: black;
+  text-decoration: none;
+}
+
+.bg-yellow{
+  background-color: var(--yellow-color);
+}
 .nav {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-center{
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.flex-column {
+  flex-direction: column;
 }
 
 .nav-list {
@@ -42,19 +79,25 @@ code {
 }
 
 .header {
+  padding: 0% var(--main-padding);
   background-color: azure;
   display: flex;
   gap: 50px;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
 .footer {
+  padding: 0% var(--main-padding);
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   color: white;
   background-color: black;
+}
+
+.main {
+  padding: 0% var(--main-padding);
 }
 
 .footer ul {
@@ -73,6 +116,15 @@ code {
   margin-bottom: 10px;
 }
 
+
+/* hero section*/
+.hero-section{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+
 @media screen and (max-width: 680px) {
   .nav-list{
     flex-direction: column;
@@ -81,9 +133,22 @@ code {
     text-align: left;
   }
 
+  .header {
+    padding: 0%;
+  }
+  .main{
+    padding: 0%;
+  }
+
   .footer{
+    padding: 0%;
     flex-direction: column;
     justify-content: flex-start;
   }
 
+  .hero-section{
+    flex-direction: column;
+  }
+ 
 }
+
