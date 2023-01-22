@@ -4,6 +4,7 @@ import './index.css'
 import greekSaladImage from '../../assets/greek-salad.jpg'
 import bruchettaImage from '../../assets/bruchetta.svg'
 import lemonDesertImage from '../../assets/lemon-dessert.jpg'
+import { Link } from 'react-router-dom'
 
 
 const featuredItems = [
@@ -32,8 +33,15 @@ const Featured = () => {
     const featuredList = items.map(item =><FeaturedItem {...item} key={item.name}/>)
     
     return (
-        <section className='featured-container'>
-            {featuredList}
+        <section className='featured-section'>
+            <div className='flex py-20'>
+                <h3 className='sub-title'>This week's specials</h3>
+                <Link to='/menu' className='btn bg-yellow'>Online menu</Link>
+            </div>
+
+            <div className='featured-container'>
+                {featuredList}
+            </div>
         </section>
     )
 }

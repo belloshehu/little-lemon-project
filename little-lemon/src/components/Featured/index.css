@@ -3,20 +3,50 @@
     --main-padding-y: 40px;
     --line-height: 1.6rem;
     --padding-mobile: 10px;
+    --sub-title-font-size: 40pt;
   }
 
+.flex{
+    display: flex;
+}
 
-.featured-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
+.featured-section {
     padding: var(--main-padding-y) 0%;
 }
 
+.featured-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.featured-section > div:first-of-type{
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
 @media screen and (min-width: 680px) {
+    .featured-section {
+        padding: var(--main-padding-y) var(--main-padding);
+    }
+
     .featured-container {
         grid-template-columns: repeat(3, 1fr);
-        padding: var(--main-padding-y) var(--main-padding);
 
     }
+
+    .featured-section > div:first-of-type{
+        flex-direction: row;
+    }
+}
+
+.py-20{
+    padding: 20px 0;
+}
+
+.sub-title {
+    font-size: var(--sub-title-font-size);
 }

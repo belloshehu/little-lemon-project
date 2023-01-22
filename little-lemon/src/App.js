@@ -4,7 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
-import BookingPage from './pages/BookingPage';
+import BookingPage from './pages/BookingPage/index.';
 import PageNotFound from './components/PageNotFound';
 import SideBar from './components/SideBar';
 import { useGlobalContext } from './lib/context';

@@ -1,6 +1,5 @@
-:root{
-  --yellow-color: #F4CE14;
-  --main-padding: 16.6%;
+*, *::after,*::before{
+  box-sizing: border-box;
 }
 
 body {
