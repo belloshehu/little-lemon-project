@@ -1,0 +1,49 @@
+:root{
+    --light-orange-color: #EE9972;
+    --light-gray-color: #EDEFEE;
+}
+
+.featured{
+    background-color: var(--light-gray-color);
+    box-shadow: 0px 1px 1px 2px rgb(252, 247, 247);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.detail{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+}
+
+.featured-image {
+    height: 300px;
+    width: 100%;
+    border-radius: 10px 10px 0px 0px;
+    object-fit: cover;
+}
+
+.small-bold{
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.price{
+    color: var(--light-orange-color);
+}
+
+.flex-row{
+    display: flex;
+}
+
+.justify-between{
+    justify-content: space-between;
+    padding: 0%;
+}
+
+.items-center{
+    align-items: center;
+}
