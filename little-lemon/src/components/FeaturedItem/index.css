@@ -9,6 +9,11 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: all 300ms ease-in-out;
+}
+
+.featured:hover{
+    transform: scale(105%);
 }
 
 .detail{
@@ -34,6 +39,7 @@
 .name, .price {
     font-size: 1.2rem;
 }
+
 .price{
     color: var(--light-orange-color);
 }

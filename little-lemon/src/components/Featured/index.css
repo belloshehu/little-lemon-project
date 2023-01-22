@@ -49,4 +49,6 @@
 
 .sub-title {
     font-size: var(--sub-title-font-size);
+    text-align: center;
+    margin-bottom: 30px;
 }
