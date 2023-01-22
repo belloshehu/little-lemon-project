@@ -11,8 +11,8 @@ import { useGlobalContext } from './lib/context';
 
 
 function App() {
-  const {isOpen} = useGlobalContext()
-  console.log(isOpen)
+  const {isOpen, closeNav} = useGlobalContext()
+
   return (
     <>
       <Header>
@@ -24,7 +24,6 @@ function App() {
         <Route path='/booking' element={<BookingPage />} />
         <Route path='*' element={<PageNotFound />}/>
       </Routes>
-
       <Footer />
     </>
   );
