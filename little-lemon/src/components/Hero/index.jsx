@@ -20,8 +20,9 @@ const Hero = () => {
 
             <Link to='/order' className='btn bg-yellow bold'>Get started</Link>
         </div>
-        
-        <img src={heroImage} alt='restaurant-photo' className='hero-image'/>
+        <div className='hero-image-wrapper'>
+            <img src={heroImage} alt='restaurant-photo' className='hero-image'/>
+        </div>
     </section>
   )
 }
