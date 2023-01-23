@@ -61,6 +61,14 @@ input, select {
     padding: 15px 20px;
 }
 
+.bg-gray{
+    background-color: rgb(226, 221, 221);
+}
+
+.slots-wrapper {
+    margin-bottom: 20px;
+}
+
 input[type='submit']{
     background-color: var(--greenish-color);
     color: var(--yellow-color);

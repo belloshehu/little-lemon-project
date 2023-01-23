@@ -4,34 +4,67 @@ import './BookingForm.css'
 import aboutImage1 from '../../assets/Mario-and-AdrianB.jpg'
 import aboutImage2 from '../../assets/Mario-and-AdrianA.jpg'
 import { useState } from 'react'
+import BookedSlotItems from '../BookedSlotItems'
 
 
 const BookingForm = () => {
 
-    const {availableTimes} = useGlobalContext()
+    const {availableTimes, updateReservations, updateTimes, bookedTimeSlots} = useGlobalContext()
     const [reservation, setReservation] = useState({
         date: '',
         time: '',
         guests: 0,
-        occasion: ''
+        occasion: 'occation'
     })
 
     const handleChange = (e) =>{
         e.preventDefault()
         setReservation(prev=>{return {...prev, [e.target.name]: e.target.value }})
+        if(e.target.name === 'date'){
+            updateTimes(e.target.value)
+        }
+    }
+
+    const resetForm = () =>{
+        setReservation(
+            {
+                date: '',
+                guests: 0,
+            }        
+        )
     }
 
     const handleSubmit = (e) =>{
         e.preventDefault()
         console.log(reservation)
+        const {date, time, guests, occasion} = reservation
+        if(date && time && guests && occasion){
+            updateReservations(reservation)
+            resetForm()
+            console.log('okay')
+        }
     }
 
     return (
         <section className='booking-section'>
-            <h3 className='sub-title'>Table Reservation</h3>
+            <h4 className='sub-title'>Table Reservation</h4>
+            <div style={{marginBottom: '20px'}}>
+                <div>
+                    <h5 style={{textAlign: 'center', color: 'gray'}}>Available time slots</h5>
+                    <BookedSlotItems slots={availableTimes} borderStyle='border-green'/>
+                </div>
+                {
+                    bookedTimeSlots().length > 0 ? (
+                        <div>
+                            <h5 style={{textAlign: 'center', color: 'gray'}}>Booked time slots</h5>
+                            <BookedSlotItems slots={bookedTimeSlots()} borderStyle='border-red'/>
+                        </div>
+                    ): ''
+                }
+             
+            </div>
 
             <div className='form-wrapper'>
-
                 <aside className='images-wrapper'>
                     <img src={aboutImage1} alt='restaurant-photo' className='image'/>
                     <img src={aboutImage2} alt='restaurant-photo' className='image'/>
@@ -46,6 +79,7 @@ const BookingForm = () => {
                             name='date'
                             value={reservation.date}
                             onChange={handleChange}
+                            required
                         />
                     </div>
                     <div className='form-group'>
@@ -55,6 +89,7 @@ const BookingForm = () => {
                             name='time' 
                             value={reservation.time}
                             onChange={handleChange}
+                            required
                         >
                             {
                                 availableTimes.map(time => <option key={time}>{time}</option>)
@@ -72,7 +107,9 @@ const BookingForm = () => {
                             name='guests'
                             value={reservation.guests}
                             onChange={handleChange}
+                            required
                         />
+                        
                     </div>
                     <div className='form-group'>
                         <label htmlFor="occasion">Occasion</label>
@@ -81,7 +118,8 @@ const BookingForm = () => {
                             name='occasion' 
                             value={reservation.occasion}
                             onChange={handleChange}
-                        > 
+                            required
+                        >   
                             <option>Birthday</option>
                             <option>Anniversary</option>
                         </select>

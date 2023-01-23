@@ -1,0 +1,7 @@
+.slots-wrapper{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-content: center;
+    justify-items: center;
+    gap: 10px;
+}
