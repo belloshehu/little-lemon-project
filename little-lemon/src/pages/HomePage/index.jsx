@@ -3,6 +3,7 @@ import Hero from '../../components/Hero'
 import Featured from '../../components/Featured'
 import Testimonials from '../../components/Testimonials'
 import About from '../../components/About'
+import './HomePage.css'
 
 
 const HomePage = () => {

@@ -1,5 +1,5 @@
 import React from 'react'
-import './index.css'
+import './Testimonial.css'
 import Stars from '../Stars'
 import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa'
  

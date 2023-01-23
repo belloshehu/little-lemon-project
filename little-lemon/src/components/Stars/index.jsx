@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaStar } from 'react-icons/fa'
-import './index.css'
+import './Stars.css'
 
 
 const index = ({stars}) => {

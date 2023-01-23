@@ -1,5 +1,5 @@
 import React from 'react'
-import  './index.css'
+import  './Testimonials.css'
 import userImageUrl1 from '../../assets/user1.jpg'
 import userImageUrl2 from '../../assets/user2.jpg'
 import userImageUrl3 from '../../assets/user3.jpg'

@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import FeaturedItem from '../FeaturedItem'
-import './index.css'
+import './Featured.css'
 import greekSaladImage from '../../assets/greek-salad.jpg'
 import bruchettaImage from '../../assets/bruchetta.svg'
 import lemonDesertImage from '../../assets/lemon-dessert.jpg'

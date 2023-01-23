@@ -1,10 +1,12 @@
 import React from 'react'
-import Hero from '../../components/Hero'
+import BookingForm from '../../components/BookingForm'
+import './BookingPage.css'
+
 
 const BookingPage = () => {
   return (
     <main>
-      <Hero />
+      <BookingForm />
     </main>
   )
 }

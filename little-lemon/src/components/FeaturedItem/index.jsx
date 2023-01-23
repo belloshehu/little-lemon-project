@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaMotorcycle } from 'react-icons/fa'
-import './index.css'
+import './FeaturedItem.css'
 
 
 const FeaturedItem = ({imageUrl, name, price, description}) => {

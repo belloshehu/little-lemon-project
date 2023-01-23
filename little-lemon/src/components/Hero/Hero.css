@@ -94,7 +94,7 @@
     }
 }
 
-.paragraph {
+.hero-section .paragraph {
     line-height: var(--line-height);
     color: white;
 }
