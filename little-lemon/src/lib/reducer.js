@@ -1,13 +1,5 @@
-const  availableTimes = (state, action, updateTimes)=>{
-    switch(action.type){
+const updateTimes = (state, date) => {
+  console.log(date);
+};
 
-        case 'updateTimes':
-            return {...state, availableTimes: updateTimes(action.payload)}
-        
-        default:
-            throw new Error(`${action.type} does not exist`)
-            
-    }
-}
-
-export default availableTimes
+export default updateTimes;

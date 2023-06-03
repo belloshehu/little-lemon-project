@@ -4,7 +4,7 @@ import './BookingForm.css'
 import aboutImage1 from '../../assets/Mario-and-AdrianB.jpg'
 import aboutImage2 from '../../assets/Mario-and-AdrianA.jpg'
 import { useState } from 'react'
-import BookedSlotItems from '../BookedSlotItems'
+import BookingSlotItems from '../BookingSlotItems'
 
 
 const BookingForm = () => {
@@ -20,9 +20,9 @@ const BookingForm = () => {
     const handleChange = (e) =>{
         e.preventDefault()
         setReservation(prev=>{return {...prev, [e.target.name]: e.target.value }})
-        if(e.target.name === 'date'){
-            updateTimes(e.target.value)
-        }
+        // if(e.target.name === 'date'){
+        //     updateTimes(e.target.value)
+        // }
     }
 
     const resetForm = () =>{
@@ -30,6 +30,8 @@ const BookingForm = () => {
             {
                 date: '',
                 guests: 0,
+                time: '',
+                occasion: ''
             }        
         )
     }
@@ -47,17 +49,17 @@ const BookingForm = () => {
 
     return (
         <section className='booking-section'>
-            <h4 className='sub-title'>Table Reservation</h4>
+            <h4 className='sub-title'>Book now</h4>
             <div style={{marginBottom: '20px'}}>
                 <div>
                     <h5 style={{textAlign: 'center', color: 'gray'}}>Available time slots</h5>
-                    <BookedSlotItems slots={availableTimes} borderStyle='border-green'/>
+                    <BookingSlotItems slots={availableTimes} borderStyle='border-green'/>
                 </div>
                 {
-                    bookedTimeSlots().length > 0 ? (
+                    bookedTimeSlots?.length > 0 ? (
                         <div>
                             <h5 style={{textAlign: 'center', color: 'gray'}}>Booked time slots</h5>
-                            <BookedSlotItems slots={bookedTimeSlots()} borderStyle='border-red'/>
+                            <BookingSlotItems slots={bookedTimeSlots} borderStyle='border-red'/>
                         </div>
                     ): ''
                 }
@@ -66,8 +68,8 @@ const BookingForm = () => {
 
             <div className='form-wrapper'>
                 <aside className='images-wrapper'>
-                    <img src={aboutImage1} alt='restaurant-photo' className='image'/>
-                    <img src={aboutImage2} alt='restaurant-photo' className='image'/>
+                    <img src={aboutImage1} alt='restaurant' className='image'/>
+                    <img src={aboutImage2} alt='restaurant' className='image'/>
                 </aside>
                 <form onSubmit={handleSubmit}>
                     <div className='form-group'>
@@ -86,13 +88,13 @@ const BookingForm = () => {
                         <label htmlFor="res-time">Choose time</label>
                         <select 
                             id='res-time' 
-                            name='time' 
+                            name='time'
                             value={reservation.time}
                             onChange={handleChange}
                             required
                         >
                             {
-                                availableTimes.map(time => <option key={time}>{time}</option>)
+                                availableTimes?.map(time => <option key={time}>{time}</option>)
                             }
                         </select>
                     </div>
@@ -125,7 +127,7 @@ const BookingForm = () => {
                         </select>
                     </div>
 
-                    <input type='submit' role='button' value='Make your reservation'/>
+                    <input type='submit' value='Make your reservation'/>
                 </form>
             </div>
         </section>

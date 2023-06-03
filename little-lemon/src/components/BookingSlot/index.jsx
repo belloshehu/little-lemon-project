@@ -1,8 +1,8 @@
 import React from 'react'
-import './BookedSlot.css'
+import './BookingSlot.css'
 
 
-const BookedSlot = ({time, borderStyle}) => {
+const BookingSlot = ({time, borderStyle}) => {
   return (
     <article className={`slot ${borderStyle}`}>
         {time}
@@ -10,4 +10,4 @@ const BookedSlot = ({time, borderStyle}) => {
   )
 }
 
-export default BookedSlot
+export default BookingSlot

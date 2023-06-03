@@ -1,3 +1,11 @@
+:root{
+  --yellow-color: #F4CE14;
+  --main-padding: 16.6%;
+  --title-font-size: 64pt;
+  --sub-title-font-size: 40pt;
+}
+
+
 .aside {
  display: hidden;
 }

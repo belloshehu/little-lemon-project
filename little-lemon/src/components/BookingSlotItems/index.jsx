@@ -1,9 +1,9 @@
 import React from 'react'
-import BookedSlot from '../BookedSlot'
-import './BookedSlotItems.css'
+import BookedSlot from '../BookingSlot'
+import './BookingSlotItems.css'
 
-const BookedSlotItems = ({slots, borderStyle}) => {
-    const slotList = slots.map((slot, index)=>
+const BookingSlotItems = ({slots, borderStyle}) => {
+    const slotList = slots?.map((slot, index)=>
         <BookedSlot 
             time={slot} borderStyle={borderStyle} key={index}/>
     )
@@ -13,4 +13,4 @@ const BookedSlotItems = ({slots, borderStyle}) => {
     )
 }
 
-export default BookedSlotItems
+export default BookingSlotItems
